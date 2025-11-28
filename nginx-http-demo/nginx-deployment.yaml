@@ -26,3 +26,13 @@ spec:
             limits:
               memory: "128Mi"
               cpu: "200m"
+          volumeMounts:
+          - name: html
+            mountPath: /usr/share/nginx/html
+      volumes:
+      - name: html
+        configMap:
+          name: nginx-index
+          items:
+          - key: index.html
+            path: index.html
