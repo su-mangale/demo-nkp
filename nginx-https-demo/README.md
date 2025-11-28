@@ -12,24 +12,22 @@ Files in this folder:
 - `ingressroute-https.yaml` - IngressRoute on `websecure` that serves TLS using secret created by cert-manager
 
 Quick notes / placeholders
-- Replace `${DOMAIN}` with your public domain (for example `nginx.example.com`).
-- Replace `${LETSENCRYPT_EMAIL}` with the email address you use for Let's Encrypt registration.
+- Replace domain with your public domain (for example `nginx.example.com`).
+- Replace let's encrypt email with the email address you use for Let's Encrypt registration.
 
 Recommended apply flow (example):
 
 1. Export variables and use `envsubst` to substitute placeholders, then apply:
 
 ```bash
-export DOMAIN=nginx.example.com
-export LETSENCRYPT_EMAIL=you@example.com
-envsubst < cluster-issuer.yaml | kubectl apply -f -
-envsubst < certificate.yaml | kubectl apply -f -
+kubectl apply -f cluster-issuer.yaml
+kubectl apply -f certificate.yaml
 kubectl apply -f configmap.yaml
 kubectl apply -f deployment.yaml
 kubectl apply -f service.yaml
 kubectl apply -f middleware-redirect.yaml
-envsubst < ingressroute-http-redirect.yaml | kubectl apply -f -
-envsubst < ingressroute-https.yaml | kubectl apply -f -
+kubectl apply -f ingressroute-http-redirect.yaml 
+kubectl apply -f ingressroute-https.yaml
 ```
 
 2. Wait for cert-manager to create the Certificate and Secret:
