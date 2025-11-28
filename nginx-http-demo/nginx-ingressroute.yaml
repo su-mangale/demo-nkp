@@ -6,7 +6,7 @@ spec:
   entryPoints:
   - web
   routes:
-  - match: PathPrefix(`/nginx`)
+  - match: PathPrefix(`/`)
     kind: Rule
     middlewares:
     - name: strip-nginx
