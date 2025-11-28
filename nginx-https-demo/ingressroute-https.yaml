@@ -1,0 +1,20 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: nginx-https
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - match: Host(`nginx.example.com.np`) && PathPrefix(`/`) # Replace with your domain
+      kind: Rule
+      services:
+        - name: nginx-service
+          port: 80
+  # TLS configuration
+  tls:
+    # cert-manager will provision the `nginx-tls` secret via the Certificate resource.
+    # Traefik's built-in ACME certResolver should NOT be used here when using cert-manager.
+    # If you instead want Traefik to manage ACME, add a `certResolver: "<your-resolver>"` here
+    # and configure Traefik accordingly.
+    secretName: nginx-tls
