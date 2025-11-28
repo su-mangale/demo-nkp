@@ -12,7 +12,3 @@ data:
       <p>Served by Kubernetes nginx deployment in namespace <strong>nginx-sample</strong>.</p>
     </body>
     </html>
-
-
-
- 

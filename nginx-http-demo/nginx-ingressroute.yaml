@@ -2,25 +2,24 @@ apiVersion: traefik.io/v1alpha1
 kind: IngressRoute
 metadata:
   name: nginx-ingressroute
-  labels:
-    app: nginx
 spec:
   entryPoints:
-    - web
+  - web
   routes:
-    - match: PathPrefix(`/nginx`)
-      kind: Rule
-      services:
-        - name: nginx
-          port: 80
-      middlewares:
-        - name: nginx-stripprefix
+  - match: PathPrefix(`/nginx`)
+    kind: Rule
+    middlewares:
+    - name: strip-nginx
+    services:
+    - name: nginx-service
+      port: 80
 ---
 apiVersion: traefik.io/v1alpha1
 kind: Middleware
 metadata:
-  name: nginx-stripprefix
+  name: strip-nginx
 spec:
   stripPrefix:
     prefixes:
-      - /nginx
+    - /nginx
+
