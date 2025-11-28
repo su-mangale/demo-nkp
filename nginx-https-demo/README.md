@@ -25,8 +25,6 @@ kubectl apply -f certificate.yaml
 kubectl apply -f configmap.yaml
 kubectl apply -f deployment.yaml
 kubectl apply -f service.yaml
-kubectl apply -f middleware-redirect.yaml
-kubectl apply -f ingressroute-http-redirect.yaml 
 kubectl apply -f ingressroute-https.yaml
 ```
 
