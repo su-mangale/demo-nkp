@@ -9,7 +9,7 @@ spec:
     - match: Host(`nginx.example.com.np`) && PathPrefix(`/`) # Replace with your domain
       kind: Rule
       services:
-        - name: nginx-service
+        - name: nginx
           port: 80
   # TLS configuration
   tls:

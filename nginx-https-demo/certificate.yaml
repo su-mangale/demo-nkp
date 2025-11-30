@@ -3,7 +3,7 @@ kind: Certificate
 metadata:
   name: nginx-cert
   labels:
-    app: nginx-demo
+    app: nginx
 spec:
   secretName: nginx-tls
   duration: 2160h # 90d
