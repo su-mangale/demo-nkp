@@ -4,7 +4,7 @@ metadata:
   name: nginx-ingressroute
 spec:
   entryPoints:
-  - web
+  - websecure # web is by default redirected to websecure
   routes:
   - match: PathPrefix(`/`)
     kind: Rule
