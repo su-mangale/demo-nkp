@@ -2,6 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: nginx
+  annotations:
+    reloader.stakater.com/auto: "true" # Reloader to monitor this deployment configmaps
 spec:
   replicas: 1
   selector:
