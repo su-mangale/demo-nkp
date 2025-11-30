@@ -1,4 +1,4 @@
-# NGINX on NKP Starter (Repository)
+# Demo Application on NKP Starter (Repository)
 
 This repository provides example Kubernetes manifests to deploy a simple NGINX application using Traefik (IngressRoute CRD) and cert-manager (Let's Encrypt). It contains two demo variants:
 
