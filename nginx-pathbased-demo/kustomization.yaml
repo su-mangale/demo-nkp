@@ -7,3 +7,4 @@ resources:
   - nginx-ingressroute.yaml
 
 nameSuffix: "-pathbased"
+namespace: nginx
