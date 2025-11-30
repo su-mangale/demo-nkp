@@ -6,7 +6,7 @@ spec:
   entryPoints:
   - websecure # web is by default redirected to websecure
   routes:
-  - match: PathPrefix(`/`)
+  - match: PathPrefix(`/app1`)
     kind: Rule
     middlewares:
     - name: strip-nginx-pathbased
@@ -21,5 +21,5 @@ metadata:
 spec:
   stripPrefix:
     prefixes:
-    - /nginx
+    - /app1
 
