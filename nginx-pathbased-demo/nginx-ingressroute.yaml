@@ -9,9 +9,9 @@ spec:
   - match: PathPrefix(`/`)
     kind: Rule
     middlewares:
-    - name: strip-nginx
+    - name: strip-nginx-pathbased
     services:
-    - name: nginx
+    - name: nginx-pathbased
       port: 80
 ---
 apiVersion: traefik.io/v1alpha1
