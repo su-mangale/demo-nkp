@@ -8,6 +8,6 @@ data:
     <html>
     <head><meta charset="utf-8"><title>APP1</title></head>
     <body>
-      <h1>APP1</h1>
+      <h1>Hello from <strong>APP1</strong></h1>
     </body>
     </html>
