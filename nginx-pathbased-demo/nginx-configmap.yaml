@@ -6,9 +6,8 @@ data:
   index.html: |
     <!doctype html>
     <html>
-    <head><meta charset="utf-8"><title>nginx on k8s</title></head>
+    <head><meta charset="utf-8"><title>APP1</title></head>
     <body>
-      <h1>nginx sample page</h1>
-      <p>Served by Kubernetes nginx deployment in namespace <strong>nginx-sample</strong>.</p>
+      <h1>APP1</h1>
     </body>
     </html>

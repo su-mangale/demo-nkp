@@ -41,12 +41,10 @@ kubectl apply -f k8s/nginx-ingressroute.yaml
 
 ```bash
 # Get Traefik service details (typically in traefik or kube-system namespace)
-kubectl get svc -n traefik
-# or
-kubectl get svc -n kube-system | grep traefik
+kubectl get svc -A | grep -i traefik
 
 # Get the LoadBalancer IP/External IP
-kubectl get svc traefik -n traefik -o jsonpath='{.status.loadBalancer.ingress[0].ip}'
+kubectl get svc traefik -n traefik -o jsonpath='{.status.loadBalancer.ingress[0].ip}' 
 ```
 
 #### 2. Verify Nginx Deployment
