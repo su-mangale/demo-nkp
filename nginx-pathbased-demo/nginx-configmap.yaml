@@ -9,5 +9,6 @@ data:
     <head><meta charset="utf-8"><title>APP1</title></head>
     <body>
       <h1>Hello from <strong>APP1</strong></h1>
+      <p> Admin is testing on backend </p>
     </body>
     </html>
